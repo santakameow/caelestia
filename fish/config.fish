@@ -12,22 +12,8 @@ if status is-interactive
     # Abbrs
     abbr lg 'lazygit'
     abbr gd 'git diff'
-    abbr ga 'git add .'
-    abbr gc 'git commit -am'
-    abbr gl 'git log'
-    abbr gs 'git status'
-    abbr gst 'git stash'
-    abbr gsp 'git stash pop'
-    abbr gp 'git push'
-    abbr gpl 'git pull'
-    abbr gsw 'git switch'
-    abbr gsm 'git switch main'
-    abbr gb 'git branch'
-    abbr gbd 'git branch -d'
-    abbr gco 'git checkout'
-    abbr gsh 'git show'
+    abbr vim 'nvim'
 
-    abbr l 'ls'
     abbr ll 'ls -l'
     abbr la 'ls -a'
     abbr lla 'ls -la'
@@ -42,4 +28,14 @@ if status is-interactive
     
     # Custom fish config
     source ~/.config/caelestia/user-config.fish 2> /dev/null
+
+    # yazi
+    function y
+	set tmp (mktemp -t "yazi-cwd.XXXXXX")
+	command yazi $argv --cwd-file="$tmp"
+	if read -z cwd < "$tmp"; and [ "$cwd" != "$PWD" ]; and test -d "$cwd"
+		builtin cd -- "$cwd"
+	end
+	rm -f -- "$tmp"
+    end
 end
