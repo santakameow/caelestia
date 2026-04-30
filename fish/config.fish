@@ -13,6 +13,7 @@ if status is-interactive
     abbr lg 'lazygit'
     abbr gd 'git diff'
     abbr vim 'nvim'
+    abbr hx 'helix'
 
     abbr ll 'ls -l'
     abbr la 'ls -a'
@@ -42,3 +43,6 @@ end
 
 # opencode
 fish_add_path /home/sakanai/.opencode/bin
+
+# set editor to helix
+set -gx EDITOR helix

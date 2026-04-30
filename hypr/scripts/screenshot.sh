@@ -4,4 +4,4 @@ DIR="$HOME/Pictures/Screenshots/$(date +%m-%Y)"
 # create directory if not exist
 mkdir -p "$DIR"
 # make screenshot
-grimblast save area "$DIR/$(date +%H:%M:%S).png"
+grimblast copysave area "$DIR/$(date +%H:%M:%S).png"
